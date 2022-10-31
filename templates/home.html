@@ -1,0 +1,23 @@
+{% extends 'base.html' %}
+
+{% block title %}Home{% endblock %}
+
+
+
+{% block content %}
+<div class="container w-50 my-5 shadow-sm p-2 bg-body rounded">
+    <h1 class="text-success my-5 text-center">ADD NEW IMAGE</h1>
+    <form method="post" novalidate>
+
+        {% csrf_token %}
+    
+
+        {% include 'includes/form.html'%}
+    
+        <button class="btn btn-success  w-100" type="submit">ADD Image</button>
+    
+      </form>
+
+</div>
+
+{% endblock %}

@@ -1,0 +1,17 @@
+{% extends 'base.html' %}
+
+{% block title %}Images{% endblock %}
+
+{% block content %}
+<div class="container d-flex flex-wrap justify-content-center">
+{% for gthb in github %}
+    <div class="card m-4" style="width: 18rem;">
+        <img src={{gthb.github_image}} class="card-img-top" alt="avatar" width="100%">
+        <div class="card-body">
+          <p class="card-text">{{gthb.github_username}}</p>
+        </div>
+      </div>
+{% endfor %}
+</div>
+
+{% endblock %}

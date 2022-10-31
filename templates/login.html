@@ -1,0 +1,24 @@
+{% extends 'base.html' %}
+
+{% block title %} Login {% endblock %}
+
+
+{% block body %}
+<div class="container w-50 my-5 shadow-sm p-2 bg-body rounded">
+    <h1 class="text-success my-5 text-center">Login</h1>
+    <form method="post" novalidate>
+
+        {% csrf_token %}
+    
+        <input type="hidden" name="next" value="{{ next }}"/>
+
+        {% include 'includes/form.html'%}
+    
+        <button class="btn btn-success  w-100" type="submit">Login</button>
+    
+      </form>
+
+      <div class="text-muted text-center small m-2">Create new account? <a href="{% url 'signup' %}">Signup</a></div>
+</div>
+
+{% endblock %}
